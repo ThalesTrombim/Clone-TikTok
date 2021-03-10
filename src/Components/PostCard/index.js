@@ -17,8 +17,10 @@ import {
     Action,
     ButtonContainer,
  } from './styled'
+import Button from '../Button/index';
 
-function PostCard() {
+
+function PostCard({ post }) {
     return (
         <Container>
             <Header>
@@ -45,7 +47,7 @@ function PostCard() {
                 <Song></Song>
                 <VideoContainer>
                     <Video 
-                        src={posts?.videoUrl}
+                        src={post?.videoUrl}
                         webkit-playsinline='true'
                         playsinline=''
                         loop='true'
@@ -58,16 +60,16 @@ function PostCard() {
             </Content>
             <Actions>
                 <Action>
-                    <img />
-                    <a></a>
+                    <img src='/images/heartIcon.svg'/>
+                    <a>{post.likes}</a>
                 </Action>
                 <Action>
-                    <img />
-                    <a></a>
+                    <img src='/images/bubbleIcon.svg'/>
+                    <a>{post.comments}</a>
                 </Action>
                 <Action>
-                    <img />
-                    <a></a>
+                    <img src='/images/arrowIcon.svg'/>
+                    <a>{post.replies}</a>
                 </Action>
             </Actions>
         </Container>
